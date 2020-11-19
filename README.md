@@ -23,7 +23,6 @@ Ex. D:\workspace-spring-tool-suite-4-4.7.1.RELEASE\CyclePricingEngine\src\main\r
 
 Example with possible values for the fields
 
-
 [
 	{
 		"frame": {
