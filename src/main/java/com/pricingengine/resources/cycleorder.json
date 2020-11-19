@@ -17,6 +17,25 @@
 			"noOfGears": "4"
 		},
 		"purchasingDate": "17/11/2020"
+	},
+	{
+		"frame": {
+			"color": "black",
+			"materialtype": "aluminium"
+		},
+		"handleBar": {
+			"color": "black",
+			"frontBreak": "disc",
+			"rearBreak": "drum"
+		},
+		"wheels": {
+			"rimtype": "spoke",
+			"tyretype": "tubeless"
+		},
+		"chainAssembly": {
+			"noOfGears": "4"
+		},
+		"purchasingDate": "17/11/2020"
 	}
 	
 ]

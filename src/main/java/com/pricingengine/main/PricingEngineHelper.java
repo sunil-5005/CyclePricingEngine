@@ -55,6 +55,7 @@ public class PricingEngineHelper {
 		ObjectMapper objectMapper = new ObjectMapper();
 		String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(cycles);
 		System.out.println("Processed Order: " + json);
+		System.out.println("Total Number of cycles: " + cycles.size());
 
 		return json;
 
