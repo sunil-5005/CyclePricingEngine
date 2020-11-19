@@ -1,13 +1,12 @@
 package com.pricingengine.components.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-
-import org.springframework.core.io.ClassPathResource;
 
 import com.pricingengine.components.breaks.Break;
 import com.pricingengine.components.breaks.DiscBreak;
@@ -36,7 +35,7 @@ public class CycleFactory {
 	static {
 		try {
 			component_prices.load(new FileInputStream(
-					new ClassPathResource("com/pricingengine/resources/component_prices.properties").getFile()));
+					new File("src/main/resources/component_prices.properties")));
 			System.out.println("Loaded component_prices successfully: " + component_prices);
 		} catch (IOException e) {
 			e.printStackTrace();

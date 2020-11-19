@@ -9,7 +9,8 @@ import java.util.Scanner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Hello world!
+ * This is the main class to bootup the application
+ * @author Sunil Shekade
  *
  */
 public class PricingEngineMain {
