@@ -1,10 +1,10 @@
-package com.pricingengine.CyclePricingEngine;
+package com.pricingengine.main;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class PriceEngineMain 
 {
     public static void main( String[] args )
     {
