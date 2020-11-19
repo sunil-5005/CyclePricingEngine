@@ -43,9 +43,11 @@ public class PricingEngineHelper {
 		}
 
 		Runnable worker = new CycleBuilder(ordersQ, cycles);
-		ExecutorService executor = Executors.newFixedThreadPool(MAX_THREADS);
+		final int noOfWorkers = ordersQ.size() <= MAX_THREADS ? ordersQ.size() : MAX_THREADS;
+		
+		ExecutorService executor = Executors.newFixedThreadPool(noOfWorkers);
 
-		for (int i = 0; i < MAX_THREADS; i++) {
+		for (int i = 0; i < noOfWorkers; i++) {
 			executor.execute(worker);
 		}
 
@@ -62,29 +64,25 @@ public class PricingEngineHelper {
 	}
 
 	public static void runPricingEngine(Cycle cycle) {
-		
+
 		double price = 0.0;
-		
-		price = cycle.getFrame().getPrice() +
-				cycle.getHandleBar().getPrice() +
-				cycle.getChainAssembly().getPrice() +
-				cycle.getSeat().getPrice();
-				
-		
+
+		price = cycle.getFrame().getPrice() + cycle.getHandleBar().getPrice() + cycle.getChainAssembly().getPrice()
+				+ cycle.getSeat().getPrice();
+
 //		calculate wheels price
-		
-		for(Wheel wheel : cycle.getWheels())
+
+		for (Wheel wheel : cycle.getWheels())
 			price += wheel.getPrice();
-		
+
 		price = price + (price * getPriceHikePercentage(cycle.getManufacturingDate()));
-		
+
 		cycle.setPrice(price);
-		
-		
+
 	}
 
 	private static double getPriceHikePercentage(String manufacturingDate) {
-		
+
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 		String date = "1/12/2016";
 		double hikePercentage = 0.0;
@@ -98,9 +96,9 @@ public class PricingEngineHelper {
 		} else {
 			hikePercentage = 0;
 		}
-		
+
 		System.out.println("Price is Hiked by " + hikePercentage + " Percentage");
-		
+
 		return hikePercentage;
 	}
 

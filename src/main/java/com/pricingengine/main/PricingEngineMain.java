@@ -1,10 +1,15 @@
 package com.pricingengine.main;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import javax.print.attribute.standard.Finishings;
+
+import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -40,7 +45,8 @@ public class PricingEngineMain {
 		} else if (option == 2) {
 			System.out.println("Please enter a order JSON file path (Fully Qualified path): ");
 			String jsonPath = scn.next();
-
+			//Uncomment below line if we want to process order from the "CyclePricingEngine/src/main/resources/cycleorder.json"
+			//ordersList = objectMapper.readValue(new FileInputStream(new File("src/main/resources/cycleorder.json")), List.class);
 			ordersList = objectMapper.readValue(new File(jsonPath), List.class);
 			
 		} else {
