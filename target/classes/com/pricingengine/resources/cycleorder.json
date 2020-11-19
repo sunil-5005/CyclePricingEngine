@@ -1,0 +1,22 @@
+[
+	{
+		"frame": {
+			"color": "red",
+			"materialtype": "steel"
+		},
+		"handleBar": {
+			"color": "black",
+			"frontBreak": "disc",
+			"rearBreak": "disc"
+		},
+		"wheels": {
+			"rimtype": "alloy",
+			"tyretype": "tubeless"
+		},
+		"chainAssembly": {
+			"noOfGears": "4"
+		},
+		"purchasingDate": "17/11/2020"
+	}
+	
+]
