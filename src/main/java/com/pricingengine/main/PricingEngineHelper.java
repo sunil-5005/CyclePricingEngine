@@ -21,7 +21,7 @@ import com.pricingengine.vehicle.Cycle;
 import com.pricingengine.vehicle.CycleOrder;
 
 public class PricingEngineHelper {
-	private static final int MAX_THREADS = 5;
+	private static final int MAX_THREADS = 10;
 	private static final double PRICE_HIKE_PERCENTAGE = 0.02;
 
 	public static String processOrder(List<Map<String, Map<String, String>>> ordersList)
