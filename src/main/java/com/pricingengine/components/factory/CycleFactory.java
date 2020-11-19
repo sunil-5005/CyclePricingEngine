@@ -42,7 +42,7 @@ public class CycleFactory {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static Cycle buildCycle(CycleOrder order) {
 		Cycle cycle = new Cycle();
 
